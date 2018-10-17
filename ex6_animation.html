@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(e=>{
+            $(".x1").hide(5000);
+            $(".x2").slideUp(5000);
+            $(".x3").fadeOut(5000);
+            $(".x4").show(5000);
+            $(".x5").slideDown(5000);
+            $(".x6").fadeIn(5000);
+
+
+            //.toggle()
+            //.slideToggle()
+            //.fadeToggle()
+            //.fadeTo()
+
+            $(".x33").animate({width:1000},10000,"linear",)
+                .animate({width:100},5000,function () {
+                alert("animate end")
+            });
+
+
+
+        })
+    </script>
+    <style>
+        .f{
+            width: 200px;
+            height: 200px;
+            background-color: #369;
+            display: inline-block;
+        }
+        .invisible{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="visible f x1">v1</div>
+<div class="visible f x2">v2</div>
+<div class="visible f x3">v3</div>
+<div class="visible f x33">v3</div>
+<div class="invisible f x4">in1</div>
+<div class="invisible f x5">in2</div>
+<div class="invisible f x6">in3</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $(document.body).append("<h2>hello, i am added back</h2>");
+            $(document.body).prepend("<h2>hello, i am added front</h2>");
+
+            $("<h2>hello</h2>").prependTo(document.body);
+            $("<h2>hello2</h2>").appendTo(document.body);
+
+            $x = $(".x");
+
+            $x.after("<div>y</div>");
+            $x.before("<div>w</div>");
+
+            $("<b>y</b>").insertAfter($x);
+            $("<b>w</b>").insertBefore($x);
+
+            //create new elem
+            let $elem = $("<div class='elem'>");
+
+            $x.wrap("<b>");
+
+        });
+    </script>
+</head>
+<body>
+<div class="x">X</div>
+</body>
+</html>

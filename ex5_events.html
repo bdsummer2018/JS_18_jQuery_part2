@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $x = $(".x");
+
+            //classic event
+            $x.on("click",function (e) {
+                //handle the event
+            });
+            $x.off("click");
+
+            //onece event
+            $x.one("click",function () {
+
+            });
+
+            //event namespaces
+            $x.on("click.xx",e=>alert("a"));
+            $x.on("click.xx",e=>alert("b"));
+            $x.on("click.yy",e=>alert("c"));
+
+            $x.off("click.yy");
+
+
+            //event call:
+            $x.trigger("click");
+
+            //custom-event
+            $x.on("vasia",e=>alert("hello"));
+            $x.on("click",e=>$x.trigger("vasia"));
+
+
+            //live-event
+            $(document).on("mouseout",".x",function () {
+                alert(this.className);
+            });
+
+            // document.addEventListener("mouseout",function(e){
+            //     if(!e.target.matches(".x")) return;
+            //     (function () {
+            //         alert(this.className);
+            //     }).call(e.target);
+            // })
+
+        });
+    </script>
+    <style>
+        .x{
+            width: 500px;
+            height: 400px;
+            background-color: #ccc;
+            border: 10px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="x">X</div>
+</body>
+</html>

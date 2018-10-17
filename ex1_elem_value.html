@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            //work with innerText
+            let $textblock = $(".text");
+            let innerTextOfElem = $textblock.text();
+            $textblock.text("hello world");
+
+            //work with innerHTML
+            let $contentblock = $(".content");
+            let innerHTML = $contentblock.html();//get innerHtml value
+            $contentblock.html("<b><i>Hello world</i></b>");
+
+            //work with input value
+            $input = $(".inp1");
+            let value = $input.val();
+            $input.val("hello");
+
+            //work with property
+            $checkbox = $(".cb1");
+            let isCheck = $checkbox.prop("checked");
+            $checkbox.prop("checked",true);
+
+            //work with attribute
+            let attrValue = $input.attr("type");//get attr value
+            $input.attr("name","passwd");//change attribute
+            $input.removeAttr("name");
+
+            //work with dataset
+            $textblock.data("id",7);//change data-id=7
+            let id = $textblock.data("id");
+            if($textblock.hasData("id")){
+                //....
+            }
+            $textblock.removeData("id");
+
+            //work with classes
+            $textblock.addClass("vasia");
+            $textblock.removeClass("vasia");
+            $textblock.toggleClass("vasia");
+            if($textblock.hasClass("vasia")){
+                //....
+            }
+
+        })
+    </script>
+</head>
+<body>
+    <div class="text"></div>
+    <div class="content"></div>
+    <input type="text" class="inp1">
+    <input type="checkbox" class="cb1">
+</body>
+</html>

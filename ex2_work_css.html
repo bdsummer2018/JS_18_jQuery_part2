@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+           let $x = $(".x");
+           $x.css("width","200px");
+           let w = $x.css("width");
+           $x.css({
+               height:"200px",
+               backgroundColor:"red"
+           });
+        });
+    </script>
+</head>
+<body>
+    <div class="x"></div>
+</body>
+</html>

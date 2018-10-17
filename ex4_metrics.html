@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $x = $(".x");
+
+            //elem
+            console.log($x.width()+" : "+$x.height());
+
+            //elem+padding
+            console.log($x.innerWidth()+" : "+$x.innerHeight());
+
+            //elem+padding+border+scrollbasr
+            console.log($x.outerWidth()+" : "+$x.outerHeight());
+
+            //elem+padding+border+scrollbasr+margin
+            console.log($x.outerWidth(true)+" : "+$x.outerHeight(true));
+
+            $x.width(200).height(500);
+
+            $x.attr("name","vasia").css("background","red").wrap("<div>")
+
+        });
+    </script>
+    <style>
+        .x{
+            width: 500px;
+            height: 400px;
+            background-color: #ccc;
+            border: 10px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="x">X</div>
+</body>
+</html>
